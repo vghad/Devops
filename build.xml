@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Apitoy" default="full-build">
+<project name="PHP Demo" default="full-build">
  <!-- By default, we assume all tools to be on the $PATH -->
- <property name="pdepend" value="/home/jenkins/vendor/bin/pdepend"/>
+	<!--<property name="pdepend" value="/home/jenkins/vendor/bin/pdepend"/>
  <property name="phpcpd"  value="/home/jenkins/vendor/bin/phpcpd"/>
  <property name="phpcs"   value="/home/jenkins/vendor/bin/phpcs"/>
  <property name="phploc"  value="/home/jenkins/vendor/bin/phploc"/>
- <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>
- <property name="phpunit" value="/home/jenkins/vendor/bin/phpunit"/>
+ <property name="phpmd"   value="/home/jenkins/vendor/bin/phpmd"/>-->
+ <property name="phpunit" value="c:\bin\phpunit"/>
 
 
  <target name="full-build"
-         depends="prepare,static-analysis,phpunit,-check-failure"
+         depends="phpunit"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
- <target name="full-build-parallel"
+ <!--<target name="full-build-parallel"
          depends="prepare,static-analysis-parallel,phpunit,-check-failure"
          description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
 
@@ -23,7 +23,7 @@
 
  <target name="static-analysis"
          depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
-         description="Performs static analysis" />
+	 description="Performs static analysis" />-->
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
  <target name="static-analysis-parallel"
