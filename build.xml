@@ -3,26 +3,13 @@
  <property name="phpmd"   value="phpmd"/>
 
 
- <property name="phpmd"   value="${basedir}/build/tools/phpmd.phar"/>
+ <property name="phpmd"   value="${basedir}"/>
 
- <property name="phpmd"   value="${basedir}/vendor/bin/phpmd"/>
+ <property name="phpmd"   value="${basedir}"/>
 
  <target name="full-build"
-         depends="phpmd"
+         depends=""
          description="Performs static analysis, runs the tests, and generates project documentation"/>
-
-
- <target name="phpmd"
-         unless="phpmd.done"
-         description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="${phpmd}" taskname="phpmd">
-   <arg path="${basedir}/src" />
-   <arg value="text" />
-   <arg path="${basedir}/build/phpmd.xml" />
-  </exec>
-
-  <property name="phpmd.done" value="true"/>
- </target>
 
 </project>
 
