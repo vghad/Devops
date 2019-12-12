@@ -19,31 +19,19 @@
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/>
  </target>
- 
- <target name="lint"
-         unless="lint.done"
-         description="Perform syntax check of sourcecode files">
-  <apply executable="php" taskname="lint">
-   <arg value="-l" />
-
-   <fileset dir="${basedir}/src">
-    <include name="**/*.php" />
-    <modified />
-   </fileset>
-   </apply>
-   <property name="lint.done" value="true"/>
- </target>
 
  <target name="prepare"
          unless="prepare.done"
          depends="clean"
-         description="Prepare for build">lint,
+         description="Prepare for build">
   <mkdir dir="${basedir}/build/api"/>
   <mkdir dir="${basedir}/build/coverage"/>
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/pdepend"/>
   <property name="prepare.done" value="true"/>
  </target>
+ 
+ 
  
  <target name="phpmd"
          unless="phpmd.done"
