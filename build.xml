@@ -3,7 +3,7 @@
  <property name="phpmd" value="c:/bin/phpmd"/>
 
  <target name="full-build"
-         depends="lint,prepare,static-analysis"
+         depends="prepare,static-analysis"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
  
  <target name="static-analysis"
