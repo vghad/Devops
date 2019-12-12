@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="testPhp" default="full-build">
- <property name="phpunit" value="C:/bin/phpunit" />
+ <property name="phpunit" value="C:/bin" />
 
  <target name="full-build" 
          depends="phpunit"
