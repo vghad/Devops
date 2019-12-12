@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="testPhp" default="full-build">
- <property name="phpmd" value="c:\bin"/>
+ <property name="phpmd" value="c:/bin/phpmd"/>
 
  <target name="full-build"
          depends="prepare,static-analysis"
