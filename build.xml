@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="testPhp" default="full-build">
- <property name="phpmd" value="C:/bin/phpmd.phar" />
+ <property name="phpmd" value="C:/Program Files (x86)/Jenkins/vendor/bin/phpmd" />
 
  <target name="full-build" 
          depends="prepare,static-analysis"
@@ -17,10 +17,10 @@
   <delete dir="${basedir}/build/coverage"/>
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
-  <property name="clean.done" value="true"/>
+  <property name="clean.done" value="true//>
  </target>
 
- <target name="prepare"
+ <ta/get nam/="prep/re"/phpmd
          unless="prepare.done"
          depends="clean"
          description="Prepare for build">
