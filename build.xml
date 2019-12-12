@@ -3,7 +3,7 @@
 <property name="phpunit" value="phpunit"/>
 
 <target name="full-build"
-      depends="phpunit-unittests,-check-failure"
+      depends="phpunit-unittests"
       description="runs the tests"/>
 
 <target name="phpunit-unittests"
@@ -20,13 +20,4 @@
   <property name="phpunit-unittests.done" value="true"/>
 </target>
 
-<target name="-check-failure">
-    <fail message="PHPUnit did not finish successfully">
-    <condition>
-    <not>
-      <equals arg1="${result.phpunit}" arg2="0"/>
-    </not>
-    </condition>
-    </fail>
-</target>
 </project>
