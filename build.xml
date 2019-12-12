@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="testPhp" default="full-build">
- <property name="phpmd" value="/home/jenkins/vendor/bin/phpmd"/>
+ <property name="phpmd" value="C:\bin\phpmd"/>
 
  <target name="full-build"
          depends="prepare,static-analysis"
@@ -13,7 +13,7 @@
  <target name="clean"
          unless="clean.done"
          description="Cleanup build artifacts">
-  <delete dir="${basedir}/build/api"/>
+  <delete dir="${basedir}/build/api"/>\
   <delete dir="${basedir}/build/coverage"/>
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/pdepend"/>
