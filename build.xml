@@ -3,11 +3,11 @@
  <property name="phpmd" value="c:/bin/phpmd"/>
 
  <target name="full-build"
-         depends="prepare,static-analysis"
+         depends="lint,prepare,static-analysis"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
  
  <target name="static-analysis"
-         depends="phpmd-ci"
+         depends="lint,phpmd-ci"
          description="Performs static analysis" />
 
  <target name="clean"
@@ -19,11 +19,25 @@
   <delete dir="${basedir}/build/pdepend"/>
   <property name="clean.done" value="true"/>
  </target>
+ 
+ <target name="lint"
+         unless="lint.done"
+         description="Perform syntax check of sourcecode files">
+  <apply executable="php" taskname="lint">
+   <arg value="-l" />
+
+   <fileset dir="${basedir}/src">
+    <include name="**/*.php" />
+    <modified />
+   </fileset>
+   </apply>
+   <property name="lint.done" value="true"/>
+ </target>
 
  <target name="prepare"
          unless="prepare.done"
          depends="clean"
-         description="Prepare for build">
+         description="Prepare for build">lint,
   <mkdir dir="${basedir}/build/api"/>
   <mkdir dir="${basedir}/build/coverage"/>
   <mkdir dir="${basedir}/build/logs"/>
