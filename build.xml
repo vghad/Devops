@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="testPhp" default="full-build">
- <property name="phpunit" value="phpunit" />
+<project default="full-build">
+<property name="phpunit" value="phpunit"/>
 
- <target name="full-build" 
-         depends="phpunit"
-         description="Performs static analysis, runs the tests, and generates project documentation"/>
- 
-<target name="phpunit" description="Run unit tests with PHPUnit">
-    <exec executable="phpunit" failonerror="true"/>
+<target name="full-build"
+      depends="phpunit-unittests,-check-failure"
+      description="runs the tests"/>
+
+<target name="phpunit-unittests"
+      unless="phpunit-unittests.done"
+      description="Run unit tests with PHPUnit">
+    <exec executable="cmd" failonerror="true" resultproperty="result.phpunit" taskname="phpunit-unittests">
+    <arg value="/c"/>
+    <arg value="${phpunit}"/>
+    <arg value="--configuration"/>
+   <arg path="${basedir}/phpunit.xml"/>
+     <arg value="--testsuite=Unit"/>
+  </exec>
+
+  <property name="phpunit-unittests.done" value="true"/>
 </target>
 
+<target name="-check-failure">
+    <fail message="PHPUnit did not finish successfully">
+    <condition>
+    <not>
+      <equals arg1="${result.phpunit}" arg2="0"/>
+    </not>
+    </condition>
+    </fail>
+</target>
 </project>
-
