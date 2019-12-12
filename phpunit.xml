@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="tests/bootstrap.php"
-    backupGlobals="false"
-    backupStaticAttributes="false"
-    strict="true"
-    verbose="true">
+<phpunit verbose="true">
 
     <testsuites>
         <testsuite name="ProjectName">
-            <directory suffix="Test.php">tests/unit/</directory>
-            <directory suffix="Test.php">tests/integration/</directory>
+            <directory suffix="testCase.php">tests/unit/</directory>
+            <directory suffix="testCase.php">tests/integration/</directory>
         </testsuite>
     </testsuites>
 
