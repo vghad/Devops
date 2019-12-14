@@ -8,11 +8,6 @@
         }
     ],
 
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
     "require": {
     "php": "*",
     "squizlabs/php_codesniffer": "*",
