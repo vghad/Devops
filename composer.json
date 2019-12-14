@@ -7,9 +7,15 @@
             "email": "vikas.ghadage@everseen.com"
         }
     ],
+
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
     "require": {
-        "php": ">=5.4",
-	"squizlabs/php_codesniffer": "*",
+    "php": "*",
+    "squizlabs/php_codesniffer": "*",
     "phpmd/phpmd": "*",
     "phpab/phpab": "*",   
     "sebastian/phpcpd": "*",
