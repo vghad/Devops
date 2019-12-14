@@ -1,0 +1,36 @@
+{
+    "name": "vghad/Devops",
+    
+    "authors": [
+        {
+            "name": "Vikas Ghadage",
+            "email": "vikas.ghadage@everseen.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+	"squizlabs/php_codesniffer": "*",
+    "phpmd/phpmd": "*",
+    "phpab/phpab": "*",   
+    "sebastian/phpcpd": "*",
+    "pdepend/pdepend": "*",
+    "phploc/phploc": "*",
+    "phpunit/phpunit": "*",
+    "phing/phing": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "phpmd/phpmd": "*",
+    "phpab/phpab": "*",   
+    "sebastian/phpcpd": "*",
+    "pdepend/pdepend": "*",
+    "phploc/phploc": "*",
+    "phpunit/phpunit": "*",
+    "phing/phing": "*"
+	}
+}
