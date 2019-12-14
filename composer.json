@@ -18,11 +18,7 @@
     "phpunit/phpunit": "*",
     "phing/phing": "*"
     },
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
+
     "require-dev": {
     "squizlabs/php_codesniffer": "*",
     "phpmd/phpmd": "*",
